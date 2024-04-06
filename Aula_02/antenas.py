@@ -72,7 +72,7 @@ def antenas_opt():
 
     results_list = []
 
-    # print variable LOCA
+     # turn data into a dataframe for better visualization of output
     loc_values = [instance.LOCA[l].value for l in instance.LOCA]
     df_loc = pd.DataFrame(loc_values, index=instance.ANT, columns=['LOC'])
     df_loc = df_loc.astype(int)
@@ -80,7 +80,6 @@ def antenas_opt():
     print('LOCA [*] := ')
     print(df_loc)
 
-    # transformar os dados a dataframe
     # TRANS: 8x10 | ANT: 8 | MED: 10
     ant_values = [[instance.COVE[f, s].value for s in instance.ANT] for f in instance.MED]
     df_ant = pd.DataFrame(ant_values, index=instance.MED, columns=instance.ANT)
