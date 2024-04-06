@@ -1,6 +1,6 @@
 <h1>Optimization IT306 - 2023II</h1>
 
-This repository contains the <b>Pyomo/Python</b> code files of the course:
+This repository contains the <b>Pyomo/Python</b> code files of the course (Original source <b>AMPL</b>):
 
  <i>"Applied Optimization in Electrical Energy Distributed Systems"</i>
 
