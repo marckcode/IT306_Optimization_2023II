@@ -1,3 +1,8 @@
-This repository contains the code files of the Optimization course IT306 "Applied Optimization in Electrical Energy Distributed Systems"
-Student: Marck C. Llerena
-Prof: Marcos J. Rider (2023 - II)
+<h1>Optimization IT306 - 2023II</h1>
+
+This repository contains the code files of the course:
+
+ <i>"Applied Optimization in Electrical Energy Distributed Systems"</i>
+
+- Student: Marck C. Llerena
+- Prof: Marcos J. Rider
