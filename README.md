@@ -7,6 +7,8 @@ This repository contains the <b>Pyomo/Python</b> code files of the course (Origi
 - Student: Marck C. Llerena
 - Prof: Marcos J. Rider
 
+The code was formatted so the outputs obtained are similar to those obtained by the original AMPL code.
+Since Python does not count with this formatting, the implementation was made using numpy, pandas & matplotlib.
 
 ## Plots:
 
