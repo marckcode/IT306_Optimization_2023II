@@ -11,8 +11,7 @@ This repository contains the <b>Pyomo/Python</b> code files of the course (Origi
 ## Plots:
 
 Plot para Aula_03, cap34.py
-
 <img src="imgs/cap34.png">
 
-
-
+Plot para Aula_03, geer.py
+<img src="imgs/geer.png">
