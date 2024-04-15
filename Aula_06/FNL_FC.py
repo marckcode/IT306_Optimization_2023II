@@ -98,8 +98,7 @@ for i, j in instance.ol:
     instance.X[i, j] = instance.X[i, j] / 1000      # de ohm para kohm
     instance.Z2[i, j] = instance.R[i, j]**2 + instance.X[i, j]**2
 
-path = "/mnt/d/solvers/Ipopt-3.11.1-win64-intel13.1/bin/ipopt.exe"
-solver = SolverFactory('ipopt', executable=path)
+solver = SolverFactory('ipopt')
 results = solver.solve(instance, tee=True)
 print('Custo total: %.4f' % instance.custo())
 

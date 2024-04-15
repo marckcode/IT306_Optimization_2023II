@@ -140,8 +140,7 @@ for i, j in instance.ol:
         instance.ms[i, j, y] = (2 * y - 1) * instance.DeltS[i, j]
 
 
-path = "/mnt/c/Program Files/IBM/ILOG/CPLEX_Studio2211/cplex/bin/x64_win64/cplex.exe"
-solver = SolverFactory('cplex', executable=path)
+solver = SolverFactory('cplex')
 results = solver.solve(instance, tee=True)
 print('Custo total: %.4f' % instance.custo())
 

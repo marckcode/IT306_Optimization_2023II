@@ -165,8 +165,8 @@ for i, j in instance.ol:
         instance.P0[i, j, d] = 0.0
         instance.Q0[i, j, d] = 0.0
         
-path = "/mnt/c/Program Files/IBM/ILOG/CPLEX_Studio2211/cplex/bin/x64_win64/cplex.exe"
-solver = SolverFactory('cplex', executable=path)
+
+solver = SolverFactory('cplex')
 
 # soluciona o modelo
 results = solver.solve(instance, tee=True)

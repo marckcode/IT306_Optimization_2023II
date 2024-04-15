@@ -4,7 +4,6 @@ from time import time
 t1 = time()
 
 m = AbstractModel()
-#os.environ['NEOS_EMAIL'] = 'm272292@dac.unicamp.br'
 
 # declaração de conjuntos e parâmetros
 m.ob = Set()                     # conjunto de nós
@@ -105,10 +104,7 @@ for i, j in instance.ol:
     instance.Z2[i, j] = instance.R[i, j]**2 + instance.X[i, j]**2
     
 
-# solver = SolverFactory('gurobi')  # cplex não consiguiu resolver
-# results = solver.solve(instance, tee=False)
-path = "/mnt/c/Program Files/IBM/ILOG/CPLEX_Studio2211/cplex/bin/x64_win64/cplex.exe"
-solver = SolverFactory('cplex', executable=path)
+solver = SolverFactory('gurobi') # tem alguns problemas com o solver 'cplex'
 results = solver.solve(instance, tee=False)
 print('Custo total: %.4f' % instance.custo())
 
@@ -204,7 +200,6 @@ for i, j in instance.ol:
         print(f' {current_flow: >8.2f}', end='')
     imax_value = instance.Imax[i, j]
     print(f' {imax_value: >8.2f}')
-    
     
 
 print()

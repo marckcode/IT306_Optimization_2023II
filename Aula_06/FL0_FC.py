@@ -90,8 +90,7 @@ for i, j in instance.ol:
     instance.X[i, j] = instance.X[i, j] / 1000      # de ohm para kohm
     instance.Z2[i, j] = instance.R[i, j]**2 + instance.X[i, j]**2
 
-path = "/mnt/c/Program Files/IBM/ILOG/CPLEX_Studio2211/cplex/bin/x64_win64/cplex.exe"
-solver = SolverFactory('cplex', executable=path)
+solver = SolverFactory('cplex')
 results = solver.solve(instance, tee=False)
 print('Custo total: %.4f' % instance.custo())
 

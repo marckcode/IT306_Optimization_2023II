@@ -77,8 +77,7 @@ m.limite_magnitude_tensão = Constraint(m.ob, m.od, rule=limite_magnitude_tensã
 file = "data/sistema34nos.dat"
 instance = m.create_instance(file)
 
-path = "/mnt/c/Program Files/IBM/ILOG/CPLEX_Studio2211/cplex/bin/x64_win64/cplex.exe"
-solver = SolverFactory('cplex', executable=path)
+solver = SolverFactory('cplex')
 
 # fixar a magnitude de tensão da subestação no valor nominal
 for i in instance.ob:
