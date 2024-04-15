@@ -1,0 +1,12 @@
+param: STUR: SATIS  CENTR  TVISI :=
+Louvre           5    440      8
+Versalhes        5    600      6
+Eiffel           4    420    2.5
+Triunfo          3    160    1.5
+Notre_Dame       3    360      2
+City_Tour        2    110      2
+Rio_Sena         2    120      4
+Moulin_Rouge     1    300      2;
+
+param ORCAM := 1500;
+param TEMAX := 20;

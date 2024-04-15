@@ -1,0 +1,5 @@
+param: PROD : VELC   LUCR   MAXT :=
+     bandas    200     25   6000
+     bobinas   140     30   4000;
+
+param DISP := 40;
