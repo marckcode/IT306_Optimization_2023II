@@ -1,0 +1,13 @@
+# Leitura dos dados do medidor
+# include Dados_medidor.dat;
+
+# Dados de modelagem de carga
+param:  S:  D   previo Pdisp    MD   :=
+#                        [W]
+        1   1       0    145     5
+        2   1       1    130    20 
+        3   2       0   2950    20    
+        4   2       3     90    80
+        5   2       4    550    20
+        6   3       0    850    20
+;

@@ -5,22 +5,22 @@ m = AbstractModel()
 
 # declaração de conjuntos e parâmetros
 m.T = Set()                                     # conjunto de intervalos de tempo
-m.PD = Param(m.T, within=PositiveReals)         # demanda de potência ativa da residencia
-m.PGD = Param(m.T, within=NonNegativeReals)     # geração distribuida da residencia
-m.cOS = Param(m.T, within=PositiveReals)        # custo pela compra de energia
-m.PMXAE = Param(within=NonNegativeReals)        # potência ativa máxima de injeção e extração do armazenador 
-m.EMXAE = Param(within=NonNegativeReals)        # capacidade máxima de armazenamento de energia 
-m.EAE0 = Param(within=NonNegativeReals)         # energia armazenada inicial
-m.alpha = Param(within=PositiveReals)           # eficiência do armazenador 
-m.beta = Param(within=PositiveReals)            # taxa de auto descarga do armazenador de energia
-m.delta = Param(within=PositiveReals)           # intervalo de tempo em horas    
+m.PD = Param(m.T, domain=PositiveReals)         # demanda de potência ativa da residencia
+m.PGD = Param(m.T, domain=NonNegativeReals)     # geração distribuida da residencia
+m.cOS = Param(m.T, domain=PositiveReals)        # custo pela compra de energia
+m.PMXAE = Param(domain=NonNegativeReals)        # potência ativa máxima de injeção e extração do armazenador 
+m.EMXAE = Param(domain=NonNegativeReals)        # capacidade máxima de armazenamento de energia 
+m.EAE0 = Param(domain=NonNegativeReals)         # energia armazenada inicial
+m.alpha = Param(domain=PositiveReals)           # eficiência do armazenador 
+m.beta = Param(domain=PositiveReals)            # taxa de auto descarga do armazenador de energia
+m.delta = Param(domain=PositiveReals)           # intervalo de tempo em horas    
 
 # declaração das variáveis 
-m.PS = Var(m.T, within=NonNegativeReals)        # potência ativa fornecida pela rede de distribuição
-m.PV = Var(m.T, within=NonNegativeReals)        # potência ativa vendida ou entregue para a rede de distribuição
-m.PAEi = Var(m.T, within=NonNegativeReals)      # potência ativa de injeção do armazenador
-m.PAEe = Var(m.T, within=NonNegativeReals)      # potência ativa de extração do armazenador
-m.EAE = Var(m.T, within=Reals)                  # energia armazenada 
+m.PS = Var(m.T, domain=NonNegativeReals)        # potência ativa fornecida pela rede de distribuição
+m.PV = Var(m.T, domain=NonNegativeReals)        # potência ativa vendida ou entregue para a rede de distribuição
+m.PAEi = Var(m.T, domain=NonNegativeReals)      # potência ativa de injeção do armazenador
+m.PAEe = Var(m.T, domain=NonNegativeReals)      # potência ativa de extração do armazenador
+m.EAE = Var(m.T, domain=Reals)                  # energia armazenada 
 
 # definição da função objetivo
 # minimizar a energia total de consumo

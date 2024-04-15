@@ -10,24 +10,24 @@ m.T = Set()                                       # conjunto de intervalos de te
 m.AE = Set()                                      # conjunto de armazenadores de energia
 m.CG = Set()                                      # conjunto de cargas gerenciáveis
 # declaração de params    
-m.PD = Param(m.T, within=PositiveReals)           # demanda de potência ativa da residencia
-m.PGD = Param(m.T, within=NonNegativeReals)       # geração distribuida da residencia
-m.cOS = Param(m.T, within=PositiveReals)          # custo pela compra de energia
+m.PD = Param(m.T, domain=PositiveReals)           # demanda de potência ativa da residencia
+m.PGD = Param(m.T, domain=NonNegativeReals)       # geração distribuida da residencia
+m.cOS = Param(m.T, domain=PositiveReals)          # custo pela compra de energia
 m.PMXAE = Param(m.AE)                             # potência ativa máxima de injeção e extração do armazenador 
 m.EMXAE = Param(m.AE)                             # capacidade máxima de armazenamento de energia 
 m.EAE0 = Param(m.AE)                              # energia armazenada inicial
 m.alpha = Param(m.AE)                             # eficiência do armazenador 
-m.delta = Param(within=PositiveReals)             # intervalo de tempo em horas    
+m.delta = Param(domain=PositiveReals)             # intervalo de tempo em horas    
 m.beta = Param(m.AE)                              # taxa de auto descarga do armazenador de energia
 m.Pe = Param(m.CG)                                # potencia ativa da carga gerenciável 
 m.Te = Param(m.CG)                                # tempo de operação da carga gerenciável a ser ligada no dia 
 m.Ti = Param(m.CG)                                # tempo de operação inicial da carga gerenciável
 m.Tf = Param(m.CG)                                # tempo de operação final da carga gerenciável
 # declaração das variáveis 
-m.PS = Var(m.T, within=NonNegativeReals)          # potência ativa fornecida pela rede de distribuição
-m.PV = Var(m.T, within=NonNegativeReals)          # potência ativa vendida ou entregue para a rede de distribuição
-m.PAEi = Var(m.T, m.AE, within=NonNegativeReals)  # potência ativa de injeção do armazenador
-m.PAEe = Var(m.T, m.AE, within=NonNegativeReals)  # potência ativa de extração do armazenador
+m.PS = Var(m.T, domain=NonNegativeReals)          # potência ativa fornecida pela rede de distribuição
+m.PV = Var(m.T, domain=NonNegativeReals)          # potência ativa vendida ou entregue para a rede de distribuição
+m.PAEi = Var(m.T, m.AE, domain=NonNegativeReals)  # potência ativa de injeção do armazenador
+m.PAEe = Var(m.T, m.AE, domain=NonNegativeReals)  # potência ativa de extração do armazenador
 m.EAE = Var(m.T, m.AE)                            # energia armazenada 
 m.eAE = Var(m.T, m.AE, domain=Binary)             # estado de operação do armazenador   
 m.we = Var(m.T, m.CG, domain=Binary)              # horário de operação da carga gerenciável (1 operando, 0 cc)

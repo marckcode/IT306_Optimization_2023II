@@ -29,19 +29,19 @@ m.D = Param()           # tempo de duração da microrrede operando de forma iso
 m.p = Param(m.C)        # probabilidade do cenário de operação [%]
 
 # declaração das variáveis
-m.PGDmax = Var(within=NonNegativeReals, 
+m.PGDmax = Var(domain=NonNegativeReals, 
                bounds=(0, m.IPGDmax))           # tamanho da geração distribuída renovável da microrrede [kW] 
-m.PTmax = Var(within=NonNegativeReals, 
+m.PTmax = Var(domain=NonNegativeReals, 
                bounds=(0, m.IPTmax))            # tamanho da geração convencional da microrrede [kW]
-m.PAEmax = Var(within=NonNegativeReals)         # potência ativa máxima de injeção e extração do armazenador [kW]
-m.EAEmax = Var(within=NonNegativeReals)         # capacidade máxima de armazenamento de energia [kWh]
-m.PS = Var(m.T, m.C, within=NonNegativeReals)   # potência ativa fornecida pela rede de distribuição [kW]
-m.PT = Var(m.T, m.C, within=NonNegativeReals)   # potência ativa fornecida pela geração convencional [kW]
-m.xD = Var(m.T, m.C, within=NonNegativeReals, 
+m.PAEmax = Var(domain=NonNegativeReals)         # potência ativa máxima de injeção e extração do armazenador [kW]
+m.EAEmax = Var(domain=NonNegativeReals)         # capacidade máxima de armazenamento de energia [kWh]
+m.PS = Var(m.T, m.C, domain=NonNegativeReals)   # potência ativa fornecida pela rede de distribuição [kW]
+m.PT = Var(m.T, m.C, domain=NonNegativeReals)   # potência ativa fornecida pela geração convencional [kW]
+m.xD = Var(m.T, m.C, domain=NonNegativeReals, 
                      bounds=(0, 1))             # porcentagem de corte ou racionamento de carga [%] 
-m.PAEi = Var(m.T, m.C, within=NonNegativeReals) # potência ativa de injeção do armazenador [kW]
-m.PAEe = Var(m.T, m.C, within=NonNegativeReals) # potência ativa de extração do armazenador [kW]
-m.EAE = Var(m.T, m.C, within=NonNegativeReals)  # energia armazenada [kWh]
+m.PAEi = Var(m.T, m.C, domain=NonNegativeReals) # potência ativa de injeção do armazenador [kW]
+m.PAEe = Var(m.T, m.C, domain=NonNegativeReals) # potência ativa de extração do armazenador [kW]
+m.EAE = Var(m.T, m.C, domain=NonNegativeReals)  # energia armazenada [kWh]
 
 # definição da função objetivo
 # minimizar o custo do dimensionamento

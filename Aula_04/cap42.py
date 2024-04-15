@@ -24,13 +24,13 @@ m.D = Param()           # tempo de duração da microrrede operando de forma iso
 m.p = Param(m.C)        # probabilidade do cenário de operação [%]
 
 # declaração das variáveis
-m.PGDmax = Var(within=NonNegativeReals, 
+m.PGDmax = Var(domain=NonNegativeReals, 
                bounds=(0, m.IPGDmax))           # tamanho da geração distribuída renovável da microrrede [kW] 
-m.PTmax = Var(within=NonNegativeReals, 
+m.PTmax = Var(domain=NonNegativeReals, 
                bounds=(0, m.IPTmax))            # tamanho da geração convencional da microrrede [kW]
-m.PS = Var(m.T, m.C, within=NonNegativeReals)   # potência ativa fornecida pela rede de distribuição [kW]
-m.PT = Var(m.T, m.C, within=NonNegativeReals)   # potência ativa fornecida pela geração convencional [kW]
-m.xD = Var(m.T, m.C, within=NonNegativeReals, 
+m.PS = Var(m.T, m.C, domain=NonNegativeReals)   # potência ativa fornecida pela rede de distribuição [kW]
+m.PT = Var(m.T, m.C, domain=NonNegativeReals)   # potência ativa fornecida pela geração convencional [kW]
+m.xD = Var(m.T, m.C, domain=NonNegativeReals, 
                      bounds=(0, 1))             # porcentagem de corte ou racionamento de carga [%] 
 
 # definição da função objetivo
